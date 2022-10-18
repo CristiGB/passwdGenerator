@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password Generator</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="./src/styles/styles.css">
+</head>
+
+<body>
+
+  <div class="main">
+  
+    <form class="form" id="form">
+      <p class="password">Aquí aparecerá tu contraseña</p>
+      <input type="text" disabled id="password">
+      <button type="button" disabled id="button-copy">
+        <i class="ri-file-copy-line"></i>
+      </button>
+      <div class="option">
+        <p>Define el total de caracteres de tu contraseña</p>
+        <input type="range" name="length" id="input-length" min="10" max="100" oninput="this.nextElementSibling.value=this.value">
+        <output id="password-length">55</output>
+      </div>
+      <div class="option">
+        <input type="checkbox" name="letters" id="">
+        <p>Incluir letras</p>
+      </div>
+      <div class="option">
+        <input type="checkbox" name="numbers" id="">
+        <p>Incluir numeros</p>
+      </div>
+      <div class="option">
+        <input type="checkbox" name="symbols" id="">
+        <p>Incluir simbolos</p>
+      </div>
+      <div class="option">
+        <input type="checkbox" name="words" id="">
+        <p>Incluir palabras</p>
+      </div>
+      <div class="option">
+        <button type="submit" id="generate-button">Genera tu fuerte contraseña</button>
+      </div>
+    </form>
+  </div>
+  
+
+  <script src="./src/index.js"></script>
+</body>
+
+</html>

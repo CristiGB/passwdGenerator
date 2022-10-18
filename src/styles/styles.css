@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap');
+
+:root{
+  --bg-color: #132947;
+  --second-color: #132947;
+  --text-color: white;
+  --container-color: #000e23;
+  --border-color: #40587c;
+  --button-text-color: rgb(131, 217, 136);
+
+  --font-family: 'Nunito', sans-serif;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  color: var(--text-color);
+  font-family: var(--font-family);
+  font-size: 26px;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-color);
+}
+
+.form{
+  max-width: 800px;
+  width: 90%;
+  padding: 2rem 4rem;
+  margin: 0 auto;
+  background-color: var(--container-color);
+}
+
+.option{
+  display: flex;
+  margin: 10px 0;
+}
+
+.option input{
+  margin-right: 10px;
+}
+
+#password:disabled{
+  width: 80%;
+  padding: .25rem 0;
+  font-weight: 900;
+  font-size: 26px;
+  color: var(--text-color);
+  cursor: not-allowed;
+  border: 0;
+  border-bottom: 1px solid var(--border-color);
+  background: transparent;
+  
+}
+
+#button-copy{
+  border: 1px solid var(--border-color);
+  background: transparent;
+  color: var(--text-color);
+  font-size: 20px;
+  padding: 10px 5px;
+  border-radius: 10px;
+  margin: 10px 0;
+  
+}
+
+#button-copy:hover{
+  cursor: pointer;
+  opacity: 0.6;
+
+}
+
+#button-copy:disabled{
+  cursor: not-allowed;
+}
