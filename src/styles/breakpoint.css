@@ -1,0 +1,83 @@
+@media screen and (max-width: 480px) {
+    .title__form{
+        font-size: inherit;
+    }
+
+    .title__password{
+        text-align: center;
+        font-size: medium;
+    }
+    .password__content{
+        flex-direction: column;
+        row-gap: 1rem;
+    }
+    .password-length{
+        text-align: center;
+    }
+
+    .button__submit{
+        width: 90%;
+    }
+}
+
+@media screen and (min-width: 480px) {
+    body{
+        height: 100vh;
+        overflow: hidden;
+    }
+    .button__submit{
+        width: 70%;
+        max-width: 300px;
+    }
+    .password__length{
+        width: 20%;
+        max-width: 80px;
+    }
+}
+
+@media screen and (min-width: 787px) {
+
+    .form{
+        max-width: 930px;
+        padding: 2rem 5rem;
+    }
+
+    .password-length{
+        flex-direction: row;
+    }
+
+    .password-length .input__length{
+        width: 40%;
+    }
+}
+
+@media screen and (min-width: 970px) {
+    .shape__3d{
+        
+        width: 200px;
+        overflow: hidden;
+        visibility: visible;
+        opacity: 1;
+    }
+    .shape__3d img{
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+      
+      .shape__circle{
+        bottom: 5%;
+        right: 20%;
+      }
+      
+      .shape__spring{
+        top: 5rem;
+        left: 8rem;
+      }
+      
+      .shape__semi-spring{
+        width: 150px;
+        top: 2%;
+        right: 8%;
+      }
+}

@@ -8,10 +8,17 @@
   <title>Password Generator</title>
   <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
   <link rel="stylesheet" href="./src/styles/styles.css">
+  <link rel="stylesheet" href="./src/styles/breakpoint.css">
 </head>
 
 <body>
 
+  <div class="shape shape__light-big shape__light--left"></div>
+  <div class="shape shape__light-small shape__light--left "></div>
+  <div class="shape shape__light-big shape__light--right"></div>
+  <div class="shape shape__light-small shape__light--right"></div>
+
+  
   <div class="main">
   
     <form class="form" id="form">
@@ -22,7 +29,7 @@
       <p class="title__password">Aquí aparecerá tu contraseña </p>
 
       <div class="password__content">
-        <input type="text" disabled id="password">
+        <input class="password" type="text" disabled id="password">
 
         <div class="copy__container">
           <button type="button" class="button__copy" disabled id="button-copy">
@@ -68,9 +75,26 @@
         </button>
       </div>
     </form>
+
   </div>
   
+  <footer class="footer">
+    <span class="footer__copy">
+      🤍 2022. &#169; CristiGB 🤍
+    </span>
+    
+  </footer>
 
+  <div class="shape__3d shape__circle">
+    <img src="./src/imgs/circle.png" alt="" class="shape__img">
+  </div>
+ 
+  <div class="shape__3d shape__semi-spring">
+    <img src="./src/imgs/spring-circle.png" alt="" class="shape__img">
+  </div>
+
+  <!-- Scripts-->
+  
   <script src="./src/index.js"></script>
 </body>
 

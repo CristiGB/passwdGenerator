@@ -72,7 +72,8 @@ fetchData(API);
 /*------------- tooltip Hidden------------------- */
 
 function AnimatedTooltip (){
-  tooltip.classList.add("show__tooltip")
+  tooltip.classList.add("show__tooltip");
+  
   setTimeout(()=>{
     tooltip.classList.remove("show__tooltip")
   },3000);
@@ -93,7 +94,7 @@ async function copyToClipboard(target) {
       console.log(`Ocurrió un error: ${error}`);
     }
     
-    hiddenTooltip();
+    AnimatedTooltip();
   }
 }
 
