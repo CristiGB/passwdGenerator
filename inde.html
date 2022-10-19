@@ -15,34 +15,57 @@
   <div class="main">
   
     <form class="form" id="form">
-      <p class="password">Aquí aparecerá tu contraseña</p>
-      <input type="text" disabled id="password">
-      <button type="button" disabled id="button-copy">
-        <i class="ri-file-copy-line"></i>
-      </button>
-      <div class="option">
-        <p>Define el total de caracteres de tu contraseña</p>
-        <input type="range" name="length" id="input-length" min="10" max="100" oninput="this.nextElementSibling.value=this.value">
-        <output id="password-length">55</output>
+      <h2 class="title__form">
+        <span class="title__form--blue"> Genera</span> una <span class="title__form--blue">contraseña</span> <br>
+         segura!
+      </h2>
+      <p class="title__password">Aquí aparecerá tu contraseña </p>
+
+      <div class="password__content">
+        <input type="text" disabled id="password">
+
+        <div class="copy__container">
+          <button type="button" class="button__copy" disabled id="button-copy">
+            <i class="ri-file-copy-line icon__copy"></i>
+          </button>
+          <span class="toolTipText">Contraseña copiada</span>
+        </div>
       </div>
+      
+      
+      <div class="options__container">
+        <div class="option password-length">
+          <p class="password__lenght-description">Define la longitud de la contraseña :</p>
+          <input type="range" class="input__length" name="length" id="input__length" min="10" max="100" >
+          <output class="password__length" id="password__length">55</output>       
+          <div class="input__length-thumb"></div>
+          
+        </div>
+
+        <div class="options__checkbox">
+          <div class="option">
+            <input class="ri-check-line checkbox" Checked type="checkbox" name="letters" id="letters">
+            <label for="letters">Incluir letras</label>
+          </div>
+          <div class="option">
+            <input class="ri-check-line checkbox" type="checkbox" name="numbers" id="numbers">
+            <label for="numbers">Incluir numeros</label>
+          </div>
+          <div class="option">
+            <input class="ri-check-line checkbox" type="checkbox" name="symbols" id="symbols">
+            <label for="symbols">Incluir simbolos</label>
+          </div>
+          <div class="option">
+            <input class="ri-check-line checkbox" type="checkbox" name="words" id="words">
+            <label for="words">Incluir palabras</label>
+          </div>
+        </div>
+        </div>
+      
       <div class="option">
-        <input type="checkbox" name="letters" id="">
-        <p>Incluir letras</p>
-      </div>
-      <div class="option">
-        <input type="checkbox" name="numbers" id="">
-        <p>Incluir numeros</p>
-      </div>
-      <div class="option">
-        <input type="checkbox" name="symbols" id="">
-        <p>Incluir simbolos</p>
-      </div>
-      <div class="option">
-        <input type="checkbox" name="words" id="">
-        <p>Incluir palabras</p>
-      </div>
-      <div class="option">
-        <button type="submit" id="generate-button">Genera tu fuerte contraseña</button>
+        <button class = "button__submit" type="submit" id="generate-button">
+          Genera tu fuerte contraseña
+        </button>
       </div>
     </form>
   </div>

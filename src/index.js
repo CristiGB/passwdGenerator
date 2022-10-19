@@ -1,8 +1,10 @@
-const paragraphPassword = document.querySelector("#password");
-const form = document.querySelector("#form");
-const buttonCopy = document.querySelector("#button-copy");
-const inputLength = document.querySelector("#input-length");
-const passwordLengthParagraph = document.querySelector("#password-length");
+const paragraphPassword = document.querySelector("#password"),
+      form = document.querySelector("#form"),
+      checkbox = [...document.querySelectorAll(".checkbox")],
+      buttonCopy = document.querySelector("#button-copy"),
+      inputLength = document.querySelector("#input__length"),
+      passwordLengthParagraph = document.querySelector("#password__length"),
+      tooltip = document.querySelector(".toolTipText");
 
 const API = "https://goquotes-api.herokuapp.com/api/v1/random?count=5";
 
@@ -12,6 +14,7 @@ const regLetter = /^[a-zA-Z ',.]+$/g;
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 const symbols = ["'", ":", "!", "@", "#", "$", "^", ")", "&", "*", "%", "-"];
 let words = [];
+let myChecks = ['letters'];
 
 /**----------------- Generar Password ------------------------ */
 
@@ -66,6 +69,16 @@ function fetchData(API) {
 
 fetchData(API);
 
+/*------------- tooltip Hidden------------------- */
+
+function AnimatedTooltip (){
+  tooltip.classList.add("show__tooltip")
+  setTimeout(()=>{
+    tooltip.classList.remove("show__tooltip")
+  },3000);
+}
+
+
 /**----------------- Clipboard API ------------------------ */
 
 async function copyToClipboard(target) {
@@ -79,7 +92,8 @@ async function copyToClipboard(target) {
     } catch (error) {
       console.log(`Ocurrió un error: ${error}`);
     }
-    alert("Copiaste la contraseña");
+    
+    hiddenTooltip();
   }
 }
 
@@ -104,10 +118,40 @@ form.addEventListener("submit", (event) => {
   buttonCopy.disabled = false;
 });
 
+/*--------------------- Valid Check------------------ */
+
+checkbox.map( check => {
+  check.addEventListener('click', ()=>{
+    
+      if(check.checked ) myChecks.push(check.name) 
+      else
+      {
+        myChecks.length > 1 ? myChecks = myChecks.filter((item) => item !== check.name)
+        : check.checked = true;
+      } 
+  
+    console.log(myChecks)
+  })
+})
+
+
 /**------------------EVENT COPY------------------------ */
 
 buttonCopy.addEventListener("click", () => {
   if (!navigator.clipboard) alert('¡Tu navegador no soporta la API Asíncrona del Portapapeles!')
   copyToClipboard("#password");
 });
+
+/*---------------SLIDER----------------------------------*/
+
+var slider = inputLength.oninput = function(){
+
+  let value = (this.value - this.min) / (this.max - this.min) * 100;
+
+  this.style.background = 'linear-gradient(to right, #40abe9 0%, #cc298def ' + value +'%, #ffffff '+ value +'%, #ffffff 100%)';
+  this.nextElementSibling.value=this.value;
+
+}
+
+
 
